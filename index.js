@@ -1,7 +1,8 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const cors = require("cors");
-const dotenv = require("dotenv");
+import express from "express";
+import nodemailer from "nodemailer";
+import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.post("/send-email", async (req, res) => {
   const body = req.body;
 
+  // Configure the transporter for Gmail
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
