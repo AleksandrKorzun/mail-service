@@ -11,7 +11,14 @@ const PORT = 8080;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://black-lion-limo.web.app"], // Allow only requests from this origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
 // Route to handle email sending
 app.post("/send-email", async (req, res) => {
   const body = req.body;
