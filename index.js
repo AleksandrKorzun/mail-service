@@ -40,7 +40,8 @@ app.post("/send-email", async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: ["BlackLionLimo@hotmail.com"], // Change to any recipient(s) you'd like
+    to: ["blacklionlimo001@gmail.com"], // Change to any recipient(s) you'd like
+    // to: ["korzun.oleksandr@gmail.com"], // Change to any recipient(s) you'd like
     subject: "New order from Black Lion Limo",
     text: text,
   };
