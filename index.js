@@ -37,7 +37,6 @@ app.post("/send-email", async (req, res) => {
     },
   });
 
-  // Create the email text from the body
   const text = Object.entries(body).reduce(
     (acc, [key, value]) => (acc += `${key}: ${value}\n`),
     ""
